@@ -25,36 +25,6 @@ pipeline
                 }
             }
         }
-        stage ('ContDeployment')
-        {
-            steps
-            {
-                script
-                {
-                    slpipeline.newdeploy("DeclarativepipelineSLib","172.31.34.229","testapp")
-                }
-            }
-        }
-        stage ('ContTesting')
-        {
-            steps
-            {
-                script
-                {
-                    slpipeline.gitdownload("Testingcode")
-                    slpipeline.newtest("DeclarativepipelineSLib")
-                }
-            }
-        }
-        stage ('ContDelivery')
-        {
-            steps
-            {
-                script
-                {
-                    slpipeline.newdeploy("DeclarativepipelineSLib","172.31.33.192","liveapp")
-                }
-            }
-        }
-    }
+     
+     }
 }
